@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
    double temp; /* prob in degrees C */
    double press; /*ambient pressure */
    double pressdrop; /* drop in pressure over a filter prob in inches of h2o */
-   char choise;  /* (y)es or (n)o */
+   char choice;  /* (y)es or (n)o */
 
    if (argc > 1)  /* if any command line parameters were entered... */
    {
@@ -29,9 +29,9 @@ int main(int argc, char* argv[])
          printf("a pressure drop?  This is reccomended if the pressure drop was \n");
          printf("greater than 20 inches of water.\n");
          printf("(y)es or (n)o:  ");
-         scanf("    %c",&choise);
+         scanf("    %c",&choice);
 
-         if (choise != 'y' && choise != 'Y')  /* if the program is just used for unit conversion, end here */
+         if (choice != 'y' && choice != 'Y')  /* if the program is just used for unit conversion, end here */
          {
             printf("The flow rate is : %f LPM\n",rotometer);
             return 0;

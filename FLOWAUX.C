@@ -14,18 +14,18 @@ double MmhgToPsi(double x)
 double getpress(void)
 {
    double value;
-   char choise;
+   char choice;
 
    printf("\nWhat is the ambient pressure?  Please enter the coefficent followed by\n");
    printf("an 'I' for inches of Water\n");
    printf("   'M' for milimeters of mercury\n");
    printf("   'P' for pounds per square inch.\n");
-   scanf("    %lf %c",&value,&choise);
-   if (choise == 'I' || choise == 'i')  /* if given in Inches of water */
+   scanf("    %lf %c",&value,&choice);
+   if (choice == 'I' || choice == 'i')  /* if given in Inches of water */
       value = WaterToPsi(value);    /* convert to PSI */
-   else if (choise == 'M' || choise == 'm')  /* if given in mercury */
+   else if (choice == 'M' || choice == 'm')  /* if given in mercury */
       value = MmhgToPsi(value);  /* change to PSI */
-   else if (choise != 'P' && choise != 'p')  /* check for PSI */
+   else if (choice != 'P' && choice != 'p')  /* check for PSI */
       return getpress();
    return value;
 }
@@ -34,19 +34,19 @@ double getpress(void)
 double getpressdrop(void)
 {
    double value;
-   char choise;
+   char choice;
 
    printf("\nWhat is the pressure drop?  Please enter the coefficent followed by\n");
    printf("an  'I' for inches of Water\n");
    printf("    'M' for milimeters of mercury\n");
    printf("    'P' for pounds per square inch.\n");
-   scanf("      %lf     %c",&value,&choise);
+   scanf("      %lf     %c",&value,&choice);
 
-   if (choise == 'I' || choise == 'i')  /* if given in Inches of water */
+   if (choice == 'I' || choice == 'i')  /* if given in Inches of water */
       value = WaterToPsi(value);    /* convert to PSI */
-   else if (choise == 'M' || choise == 'm')  /* if given in mercury */
+   else if (choice == 'M' || choice == 'm')  /* if given in mercury */
       value = MmhgToPsi(value);  /* change to PSI */
-   else if (choise != 'P' && choise != 'p')  /* check for PSI */
+   else if (choice != 'P' && choice != 'p')  /* check for PSI */
       return getpressdrop();
    return value;
 }
@@ -65,18 +65,18 @@ double KelToFah(double x)
 double gettemp(void)
 {
    double value;
-   char choise;
+   char choice;
 
    printf("\nWhat is the ambient temperature?  Please enter the coefficent followed\n");
    printf("by a 'C' for Celcius\n");
    printf("     'F' for Farenheit\n");
    printf("     'K' for Kelvin\n");
-   scanf("     %lf     %c",&value,&choise);
-   if (choise == 'C' || choise == 'c')  /* if given in Inches of water */
+   scanf("     %lf     %c",&value,&choice);
+   if (choice == 'C' || choice == 'c')  /* if given in Inches of water */
      value = CelToFah(value);    /* convert to PSI */
-   else if (choise == 'K' || choise == 'k')  /* if given in mercury */
+   else if (choice == 'K' || choice == 'k')  /* if given in mercury */
       value = KelToFah(value);  /* change to PSI */
-   else if (choise != 'F' && choise != 'f')  /* check for PSI */
+   else if (choice != 'F' && choice != 'f')  /* check for PSI */
       return gettemp();
    return value;
 }
@@ -124,16 +124,16 @@ double curve2(void)
 double nocurve(void)
 {
    double rotometer;
-   char choise;
+   char choice;
 
    printf("What is the rotometer velocity for correction?\n");
    printf("Please type the coefficient followed by:\n");
    printf("    L for Liters Per Minute,\n");
    printf("    F for Starndard Cubic Feet per Minute\n");
-   scanf("   %lf   %c", &rotometer, &choise);
-   if (choise == 'f' || choise == 'F')
+   scanf("   %lf   %c", &rotometer, &choice);
+   if (choice == 'f' || choice == 'F')
       rotometer = CfmToLpm(rotometer);
-   else if (choise != 'L' && choise != 'l')
+   else if (choice != 'L' && choice != 'l')
      return nocurve();
    return rotometer;
 }
